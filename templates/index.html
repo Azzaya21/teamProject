@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Өгөгдлийн сангийн мэдээлэл</title>
+</head>
+<body>
+    <h1>Өгөгдөл харах</h1>
+    <a href="/add">Мэдээлэл нэмэх</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Нэр</th>
+            <th>Нас</th>
+            <th>Үйлдэл</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row['id'] }}</td>
+            <td>{{ row['name'] }}</td>
+            <td>{{ row['age'] }}</td>
+            <td>
+                <a href="/edit/{{ row['id'] }}">Засах</a>
+                <form action="/delete/{{ row['id'] }}" method="post" style="display:inline;">
+                    <button type="submit">Устгах</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
