@@ -5,13 +5,13 @@ app = Flask(__name__)
 
 # MySQL Connection Configuration
 DB_CONFIG = {
-    'host': 'your_mysql_host',  # e.g., 'localhost' or the external provider's IP
-    'user': 'your_mysql_user',  # e.g., 'root' or your MySQL username
-    'password': 'your_mysql_password',  # your MySQL password
-    'database': 'your_database_name',  # the database name you are using
+    'host': 'sql5.freemysqlhosting.net', 
+    'user': 'sql5746923',  
+    'password': 'GNB6i9x4yF',  
+    'database': 'sql5746923',  
 }
 
-# Nuur khudgas: Medeelel gargah
+# Nuur huudas: Medeelel gargah
 @app.route('/')
 def index():
     # Connecting to MySQL Database
