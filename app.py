@@ -6,11 +6,10 @@ app = Flask(__name__)
 
 # MySQL холболтын тохиргоо
 DB_CONFIG = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': 'Lunalapin21',
-    'database': 'team_project',
-    'ssl_disabled': True 
+    'host': 'sql5.freemysqlhosting.net',
+    'user': 'sql5746923',
+    'password': 'GNB6i9x4yF',
+    'database': '	sql5746923',
 }
 
 # Нүүр хуудас: Мэдээллийг харах
@@ -65,4 +64,4 @@ def delete(id):
     return redirect('/')
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+    app.run(debug=True)
