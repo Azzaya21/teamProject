@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 # MySQL холболтын тохиргоо
 DB_CONFIG = {
-    'host': '103.212.162.181',
+    'host': 'localhost',
     'user': 'root',
     'password': 'Lunalapin21',
     'database': 'team_project',
