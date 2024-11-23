@@ -1,31 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Өгөгдлийн сангийн мэдээлэл</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
 </head>
 <body>
-    <h1>Өгөгдөл харах</h1>
-    <a href="/add">Мэдээлэл нэмэх</a>
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Нэр</th>
-            <th>Нас</th>
-            <th>Үйлдэл</th>
-        </tr>
-        {% for row in data %}
-        <tr>
-            <td>{{ row['id'] }}</td>
-            <td>{{ row['name'] }}</td>
-            <td>{{ row['age'] }}</td>
-            <td>
-                <a href="/edit/{{ row['id'] }}">Засах</a>
-                <form action="/delete/{{ row['id'] }}" method="post" style="display:inline;">
-                    <button type="submit">Устгах</button>
-                </form>
-            </td>
-        </tr>
+    <h1>Book Store</h1>
+    
+    <h2>Books</h2>
+    <ul>
+        {% for book in books %}
+        <li>
+            {{ book.title }} - {{ book.price }} - {{ book.publication_year }}
+            <a href="{{ url_for('edit', book_id=book.book_id) }}">Edit</a>
+            <form action="{{ url_for('delete', book_id=book.book_id) }}" method="POST">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
         {% endfor %}
-    </table>
+    </ul>
+    
+    <h2>Top Selling Books</h2>
+    <ul>
+        {% for book in top_selling_books %}
+        <li>
+            {{ book.title }} - Sold: {{ book.total_sold }}
+        </li>
+        {% endfor %}
+    </ul>
+    
+    <a href="{{ url_for('add') }}">Add a New Book</a>
 </body>
 </html>
