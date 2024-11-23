@@ -5,11 +5,10 @@ app = Flask(__name__)
 
 # MySQL холболтын тохиргоо
 DB_CONFIG = {
-    'host': '127.0.0.1',
+    'host': '103.212.162.181',
     'user': 'root',
     'password': 'Lunalapin21',
     'database': 'team_project',
-    'ssl_disabled': True 
 }
 
 # Нүүр хуудас: Мэдээллийг харах
